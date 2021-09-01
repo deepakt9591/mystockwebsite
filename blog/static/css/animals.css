@@ -1,0 +1,131 @@
+
+#gallery {
+   line-height:0;
+   -webkit-column-count:4; /* split it into 5 columns */
+   -webkit-column-gap:10px; /* give it a 5px gap between columns */
+   -moz-column-count:6;
+   -moz-column-gap:10px;
+   column-count:5;
+   column-gap:10px;
+
+
+}
+#gallery img:hover {
+   transform: scale(1.05);
+}
+#gallery img {
+   width: 100% !important;
+   height: auto !important;
+   margin-bottom:5px; /* to match column gap */
+   transition: filter 2s;
+
+
+}
+#gallery .mask {
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+@media (max-width: 1200px) {
+   #gallery {
+    -moz-column-count:    4;
+    -webkit-column-count: 4;
+    column-count:         4;
+   }
+}
+@media (max-width: 1000px) {
+   #gallery {
+    -moz-column-count:    3;
+    -webkit-column-count: 3;
+    column-count:         3;
+   }
+}
+@media (max-width: 800px) {
+   #gallery {
+    -moz-column-count:    2;
+    -webkit-column-count: 2;
+    column-count:         2;
+   }
+}
+@media (max-width: 400px) {
+   #gallery {
+    -moz-column-count:    1;
+    -webkit-column-count: 1;
+    column-count:         1;
+   }
+}
+
+
+
+
+
+
+#searchbar{
+  color: lightblue;
+  width: 1000px;
+  align-items: center;
+
+}
+#searchbtn{
+  color: white;
+  background: red;
+
+}
+#imggg{
+  color: red;
+}
+#inup{
+  border: 0.2px solid black;
+  border-radius: 10px;
+  border-width: thin;
+  background:silver;
+  border-left: 50px;
+  color: black;
+  margin-top: 5px;
+  padding: 8px;
+
+
+}
+
+#items{
+  margin-top: 7px;
+  padding-top: 50px;
+  background-color: black;
+
+}
+
+
+#hello{
+  color: black;
+  -webkit-text-stroke: 1.5px #545454;
+  text-align: center;
+  padding-top: : 20px;
+  font-size: 120px;
+  margin-top: : 0px;
+  font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+  margin-top: 0px;
+  font-weight:bold;
+  box-sizing: border-box;
+  border-bottom: 200px;
+
+
+}
+
+#addontext{
+  text-align: center;
+  color: white;
+  margin-top: -90px;
+  font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+
+
+}
+#future{
+  color: red;
+}
+#mystocktext{
+  background-color: black;
+}
+
+#whole{
+  background-color:grey;
+}

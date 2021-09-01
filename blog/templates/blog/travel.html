@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/macro.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700|Merriweather' rel='stylesheet' type='text/css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'index' %}"> <span id="my">My</span> Stock</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{% url 'admin:index' %}">Admin <span class="sr-only"></span></a></li>
+        <li><a href="{% url 'blog:users' %}">Feedback</a></li>
+        <li><a href="{% url 'blog:register' %}">Register</a></li>
+        <li><a href="{% url 'blog:about' %}">About</a></li>
+
+
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+
+
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'logout' %}"><span id="username">{{ user.username }} </span>   Logout</a></li>
+        {% else %}
+        <li><a href="{% url 'blog:user_login' %}"><span id="login">Login</span></a></li>
+        {% endif %}
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+<div id = "items">
+
+
+<div id="gallery">
+
+
+    <img src="{% static 'images/travel/1.jpg' %}">
+    <img src="{% static 'images/travel/2.jpg' %}">
+    <img src="{% static 'images/travel/3.jpg' %}">
+    <img src="{% static 'images/travel/4.jpg' %}">
+    <img src="{% static 'images/travel/5.jpg' %}">
+    <img src="{% static 'images/travel/6.jpg' %}">
+    <img src="{% static 'images/travel/7.jpg' %}">
+    <img src="{% static 'images/travel/8.jpg' %}">
+    <img src="{% static 'images/travel/10.jpg' %}">
+    <img src="{% static 'images/travel/9.jpg' %}">
+    <img src="{% static 'images/travel/11.jpg' %}">
+    <img src="{% static 'images/travel/12.jpg' %}">
+    <img src="{% static 'images/travel/13.jpg' %}">
+
+
+
+
+  </div>
+  </div>
+  <div id="mystocktext">
+
+
+
+  <div class="container">
+  <br>
+  <br>
+  <p></p>
+  <p></p>
+
+  <h1 id="hello" >MY STOCK</h1>
+
+  </div>
+
+  <h3 id='addontext'>THE <span id="future">FUTURE</span> STARTS TODAY!</h3>
+    </div>
+      </div>
+      <div class="loader">
+      <span class="loader-block"></span>
+      <span class="loader-block"></span>
+      <span class="loader-block"></span>
+      <span class="loader-block"></span>
+      <span class="loader-block"></span>
+      <span class="loader-block"></span>
+      <span class="loader-block"></span>
+      <span class="loader-block"></span>
+      <span class="loader-block"></span>
+    </div>
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,15 @@
+{% extends "blog/base.html" %}
+{% block body_block %}
+
+<div class="container">
+    {% if user.is_authenticated %}
+        <ul class="nav navbar-nav">
+          <li><span class="sr-only"></span></li>
+    {% else %}
+    <ul class="nav navbar-nav">
+      <li><span class="sr-only"></span></li>
+
+    {% endif %}
+  </div>
+
+{% endblock %}

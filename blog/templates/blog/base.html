@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My Stock</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700|Merriweather' rel='stylesheet' type='text/css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap" rel="stylesheet">
+    <script src="{% static 'js/blog.js' %}">
+
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'index' %}"> <span id="my">My</span> Stock</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{% url 'admin:index' %}">Admin <span class="sr-only"></span></a></li>
+        <li><a href="{% url 'blog:users' %}">Feedback</a></li>
+        <li><a href="{% url 'blog:register' %}">Register</a></li>
+        <li><a href="{% url 'blog:about' %}">About</a></li>
+
+
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+
+
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'logout' %}"><span id="username">{{ user.username }} </span>   Logout</a></li>
+        {% else %}
+        <li><a href="{% url 'blog:user_login' %}"><span id="login">Login</span></a></li>
+        {% endif %}
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+{% block body_block %}
+{% endblock %}
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+<div class="back">
+  <img class="iphoneback" src="{% static 'images/home/back.jpg' %}" alt="">
+
+</div>
+
+<div class="container">
+
+<div id ="addimg">
+
+
+<form class="input group" role="search">
+<div class="pull-left">
+<input id="searchbar" type="text" class="form-control" placeholder="Search Photos">
+</div>
+<button id = "searchbtn" type="Search" class="btn btn-default navbarbtn">Search</button>
+
+</form>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br><br><br>
+<div class = "exploretxt">
+      <h1>Explore the world arround you<span id = 'explore'></span>!</h1>
+      <h4>“Photography takes an instant out of time, altering life by holding it still.”
+</h4>
+
+</div>
+<div id = "freesub">
+
+
+
+<form class="navbar navbar-inverse" role="search">
+  <div class="form-group">
+
+  </div>
+  <div id="subtext">
+
+
+
+  </div>
+</form>
+</div>
+<h2 id= "collect">Featured <span id = 'explore'>Stock </span>Photo collection</h2>
+
+<div class="view view-first">
+  <img src="{% static 'images/home/image41.jpg' %}" />
+  <div class="mask">
+    <h2>Earth Day</h2>
+    <p>: the physical world and everything in it (such as plants, animals, mountains, oceans, stars, etc.) that is not made by people..</p>
+    {% if user.is_authenticated %}
+    <a href="{% url 'blog:earth' %}" height="500" width="435" class="info">VIEW MORE</a>
+    {% else %}
+    <a href="{% url 'blog:user_login' %}"><span id="login">Login to view</span></a>
+    {% endif %}  </div>
+</div>
+
+
+</div>
+</form>
+</div>
+<div class="view view-first">
+<img src="{% static 'images/home/phone.jpg' %}" />
+<div class="mask">
+  <h2>MACRO</h2>
+  <p>:Close-up photography of small subjects, including things like bugs and flowers.</p>
+  {% if user.is_authenticated %}
+  <a href="{% url 'blog:macro' %}" height="500" width="435" class="info">VIEW MORE</a>
+  {% else %}
+  <a href="{% url 'blog:user_login' %}"><span id="login">Login to view</span></a>
+  {% endif %}
+</div>
+</div>
+
+<div class="view view-first">
+<img src="{% static 'images/home/templeFV.jpg' %}" />
+<div class="mask">
+  <h2>Architecture</h2>
+  <p>A cool description of some sort between these tags. I am so cool and awesomely awesome.</p>
+  {% if user.is_authenticated %}
+  <a href="{% url 'blog:archi' %}" height="500" width="435" class="info">VIEW MORE</a>
+  {% else %}
+  <a href="{% url 'blog:user_login' %}"><span id="login">Login to view</span></a>
+  {% endif %}</div>
+</div>
+<div class="view view-first">
+<img src="{% static 'images/home/landscape2.jpg' %}" />
+<div class="mask">
+  <h2>animals</h2>
+  <p>:capturing images of animals for use in commercial and artistic endeavors..</p>
+  {% if user.is_authenticated %}
+  <a href="{% url 'blog:animals' %}" height="500" width="435" class="info">VIEW MORE</a>
+  {% else %}
+  <a href="{% url 'blog:user_login' %}"><span id="login">Login to view</span></a>
+  {% endif %}
+</div>
+</div>
+
+
+
+<div class="view view-first">
+<img src="{% static 'images/home/parachu3.jpg' %}" />
+<div class="mask">
+  <h2>travel</h2>
+  <p>:This includes anything from digital editing, altering darkroom developments, playing with camera settings or usage or making Art Collages.</p>
+  {% if user.is_authenticated %}
+  <a href="{% url 'blog:travel' %}" height="500" width="435" class="info">VIEW MORE</a>
+  {% else %}
+  <a href="{% url 'blog:user_login' %}"><span id="login">Login to view</span></a>
+  {% endif %}</div>
+</div>
+
+<div class="view view-first">
+<img src="{% static 'images/home/falls.jpg' %}" />
+<div class="mask">
+  <h2>LOng exposure</h2>
+
+  {% if user.is_authenticated %}
+  <a href="{% url 'blog:long' %}" height="500" width="435" class="info">VIEW MORE</a>
+  {% else %}
+  <a href="{% url 'blog:user_login' %}"><span id="login">Login to view</span></a>
+  {% endif %}</div>
+</div>
+
+<div class="view view-first">
+<img src="{% static 'images/home/curve.jpg' %}" />
+<div class="mask">
+  <h2>Roads</h2>
+  <p>:Long-exposure photography involves using a long-duration shutter speed to sharply capture the stationary elements</p>
+  {% if user.is_authenticated %}
+  <a href="{% url 'blog:roads' %}" height="500" width="435" class="info">VIEW MORE</a>
+  {% else %}
+  <a href="{% url 'blog:user_login' %}"><span id="login">Login to view</span></a>
+  {% endif %}</div>
+</div>
+
+<div class="view view-first">
+<img src="{% static 'images/home/beach.jpg' %}" />
+<div class="mask">
+  <h2>Experimental</h2>
+  <p>:Long-exposure photography involves using a long-duration shutter speed to sharply capture the stationary elements</p>
+  {% if user.is_authenticated %}
+  <a href="{% url 'blog:experiment' %}" height="500" width="435" class="info">VIEW MORE</a>
+  {% else %}
+  <a href="{% url 'blog:user_login' %}"><span id="login">Login to view</span></a>
+  {% endif %}</div>
+</div>
+<br>
+<h1></h1>
+
+<br>
+<div class="container">
+<br>
+<br>
+<p></p>
+<p></p>
+
+
+<h1 id="hello" >MY STOCK</h1>
+</div>
+<h3 id='addontext'>THE <span id="future">FUTURE</span> STARTS TODAY!</h3>
+
+
+
+
+<div class="centerer">
+
+
+  <div class="wrap">
+    {% if user.is_authenticated %}
+    <a class="btn-0" href="{% url 'blog:animals' %}" style= "text-decoration: none;">Animals</a>
+    {% else %}
+    <a class="btn-0" href="" style= "text-decoration: none;">Animals</a>
+
+    {% endif %}
+
+  </div>
+
+
+</div>
+<div class="centerer1">
+  <div class="wrap1">
+    {% if user.is_authenticated %}
+    <a class="btn-1" href="{% url 'blog:macro' %}" style= "text-decoration: none;">Macro</a>
+    {% else %}
+    <a class="btn-1" href="" style= "text-decoration: none;">Macro</a>
+    {% endif %}
+    </div>
+    </div>
+    </div>
+
+
+
+
+<div class="centerer2">
+  <div class="wrap2">
+    {% if user.is_authenticated %}
+    <a class="btn-3" href="{% url 'blog:archi' %}" style= "text-decoration: none;">Architecture</a>
+    {% else %}
+    <a class="btn-3" href="" style= "text-decoration: none;">Architecture</a>
+    {% endif %}
+  </div>
+  </div>
+</div>
+<div class="centerer3">
+  <div class="wrap3">
+    {% if user.is_authenticated %}
+    <a class="btn-3" href="{% url 'blog:experiment' %}" style= "text-decoration: none;">Experimental</a>
+    {% else %}
+    <a class="btn-3" href="" style= "text-decoration: none;">Experimental</a>
+    {% endif %}
+  </div>
+  </div>
+  <div class="centerer4">
+    <div class="wrap4">
+      {% if user.is_authenticated %}
+      <a class="btn-4" href="{% url 'blog:travel' %}" style= "text-decoration: none;">Travel</a></div>
+      {% else %}
+      <a class="btn-4" href="" style= "text-decoration: none;">Travel</a></div>
+      {% endif %}
+    </div>
+    <div class="centerer5">
+      <div class="wrap5">
+        {% if user.is_authenticated %}
+        <a class="btn-5" href="{% url 'blog:roads' %}" style= "text-decoration: none;">Roads</a></div>
+        {% else %}
+        <a class="btn-5" href="" style= "text-decoration: none;">Roads</a></div>
+        {% endif %}
+      </div>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
